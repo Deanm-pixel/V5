@@ -1,0 +1,27 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+    ports:
+      - 5173:5173
+      - 4000:4000
+      - 27017:27017
+    environment:
+      MONGO_URI: "mongodb://mongo:27017"
+      JWT_SECRET: "supersecret"
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:
