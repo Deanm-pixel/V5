@@ -2,7 +2,7 @@
   "name": "Wissensplattform V5",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/workspace",
+  "workspaceFolder": "/workspaces/V5",
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash"
   },
