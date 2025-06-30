@@ -9,7 +9,7 @@ services:
     ports:
       - 5173:5173
       - 4000:4000
-      - 27017:27017
+      # - 27017:27017   # <--- ENTFERNT!
     environment:
       MONGO_URI: "mongodb://mongo:27017"
       JWT_SECRET: "supersecret"
